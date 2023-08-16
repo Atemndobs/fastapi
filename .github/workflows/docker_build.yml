@@ -17,7 +17,7 @@ jobs:
         id: gettag
         run: |
           git fetch --tags
-          echo "::set-output name=version::$(echo $(git describe --tags $(git rev-list --tags --max-count=2)) | sed 's/v//')"
+          echo "::set-output name=version::$(echo $(git describe --tags $(git rev-list --tags --max-count=1)) | sed 's/v//')"
 
       - name: Increment version
         id: incver
@@ -40,8 +40,8 @@ jobs:
 
       - name: Configure Git
         run: |
-          git config user.name "Your Name"
-          git config user.email "your-email@example.com"
+          git config user.name "Atemndobs
+          git config user.email "atemndobs@yahoo.com"
 
       - name: Push new tag to repository
         run: |
