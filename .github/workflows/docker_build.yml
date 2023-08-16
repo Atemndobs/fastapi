@@ -43,6 +43,7 @@ jobs:
       - name: Build and push Docker image
         run: |
           docker build -t atemndobs/fastapi:${{ github.sha }} .
+          docker build -t atemndobs/fastapi:latest .
           docker push atemndobs/fastapi:${{ github.sha }}
           docker push atemndobs/fastapi:latest
 
