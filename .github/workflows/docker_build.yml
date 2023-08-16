@@ -17,12 +17,20 @@ jobs:
         id: gettag
         run: |
           git fetch --tags
-          echo "::set-output name=version::$(echo $(git describe --tags $(git rev-list --tags --max-count=1)) | sed 's/v//')"
+          latest_tag=$(git describe --tags $(git rev-list --tags --max-count=1))
+          echo "Latest Tag: $latest_tag"
+          echo "::set-output name=version::$(echo $latest_tag | sed 's/^v//')"
 
       - name: Increment version
         id: incver
         run: |
-          echo "::set-output name=newversion::v$(echo $(echo ${{ steps.gettag.outputs.version }} + 0.1 | bc))"
+          major_version=$(echo ${{ steps.gettag.outputs.version }} | cut -d. -f1)
+          minor_version=$(echo ${{ steps.gettag.outputs.version }} | cut -d. -f2)
+          incremented_minor_version=$((minor_version + 1))
+          new_version="v$major_version.$incremented_minor_version"
+          echo "New Version: $new_version"
+          echo "::set-output name=newversion::$new_version"
+
 
       - name: Set new tag to current commit
         run: git tag ${{ steps.incver.outputs.newversion }}
@@ -43,6 +51,6 @@ jobs:
           git config user.name "Atemndobs"
           git config user.email "atemndobs@yahoo.com"
 
-      - name: Push new tag to repository
-        run: |
-          git push https://${{ secrets.PERSONAL_ACCESS_TOKEN }}@github.com/Atemndobs/fastapi.git ${{ steps.incver.outputs.newversion }}
+#      - name: Push new tag to repository
+#        run: |
+#          git push https://${{ secrets.PERSONAL_ACCESS_TOKEN }}@github.com/Atemndobs/fastapi.git ${{ steps.incver.outputs.newversion }}
