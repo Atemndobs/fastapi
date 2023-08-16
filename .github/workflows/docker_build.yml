@@ -44,6 +44,7 @@ jobs:
         run: |
           docker build -t atemndobs/fastapi:${{ github.sha }} .
           docker push atemndobs/fastapi:${{ github.sha }}
+          docker push atemndobs/fastapi:latest
 
 
       - name: Configure Git

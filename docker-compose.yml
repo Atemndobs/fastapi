@@ -2,10 +2,10 @@ version: '3.8'
 
 services:
   fastapi_app:
-    build:
-      context: .
-      dockerfile: Dockerfile
-    image: fastapi_app:latest
+#    build:
+#      context: .
+#      dockerfile: Dockerfile
+    image: fastapi:latest
     ports:
       - "2222:80"
     volumes:
