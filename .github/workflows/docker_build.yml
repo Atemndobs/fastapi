@@ -1,9 +1,9 @@
-name: Build and Push Docker Image
+name: Build and Push Docker Image with Version
 
 on:
   push:
     branches:
-      - master
+      - main
 
 jobs:
   build:
@@ -13,6 +13,20 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
+      - name: Get latest tag
+        id: gettag
+        run: |
+          git fetch --tags
+          echo "::set-output name=version::$(echo $(git describe --tags $(git rev-list --tags --max-count=1)) | sed 's/v//')"
+
+      - name: Increment version
+        id: incver
+        run: |
+          echo "::set-output name=newversion::v$(echo $(echo ${{ steps.gettag.outputs.version }} + 0.1 | bc))"
+
+      - name: Set new tag to current commit
+        run: git tag ${{ steps.incver.outputs.newversion }}
+
       - name: Login to Docker Hub
         uses: docker/login-action@v1
         with:
@@ -21,5 +35,8 @@ jobs:
 
       - name: Build and push Docker image
         run: |
-          docker build -t atemndobs/fastapi:${{ github.sha }} .
-          docker push atemndobs/fastapi:${{ github.sha }}
+          docker build -t atemndobs/fastapi:${{ steps.incver.outputs.newversion }} .
+          docker push atemndobs/fastapi:${{ steps.incver.outputs.newversion }}
+
+      - name: Push new tag to repository
+        run: git push origin ${{ steps.incver.outputs.newversion }}
