@@ -1,2 +1,2 @@
 # fastapi
-Fastapi app for create ai apis
+Fastapi app for creating ai apis
