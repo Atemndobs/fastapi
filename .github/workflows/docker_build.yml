@@ -40,7 +40,7 @@ jobs:
 
       - name: Configure Git
         run: |
-          git config user.name "Atemndobs
+          git config user.name "Atemndobs"
           git config user.email "atemndobs@yahoo.com"
 
       - name: Push new tag to repository
