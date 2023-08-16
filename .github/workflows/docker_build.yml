@@ -24,13 +24,7 @@ jobs:
       - name: Increment version
         id: incver
         run: |
-          major_version=$(echo ${{ steps.gettag.outputs.version }} | cut -d. -f1)
-          minor_version=$(echo ${{ steps.gettag.outputs.version }} | cut -d. -f2)
-          incremented_minor_version=$((minor_version + 1))
-          new_version="v$major_version.$incremented_minor_version"
-          echo "New Version: $new_version"
-          echo "::set-output name=newversion::$new_version"
-
+          echo "::set-output name=newversion::v$(echo $(echo ${{ steps.gettag.outputs.version }} + 0.1 | bc))"
 
       - name: Set new tag to current commit
         run: git tag ${{ steps.incver.outputs.newversion }}
