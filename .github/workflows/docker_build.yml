@@ -42,10 +42,8 @@ jobs:
 
       - name: Build and push Docker image
         run: |
-          docker build -t atemndobs/fastapi:${{ github.sha }} .
-          docker build -t atemndobs/fastapi:v2 .
-          docker push atemndobs/fastapi:${{ github.sha }}
-          docker push atemndobs/fastapi:v2
+          docker build -t atemndobs/fastapi:v1.3 .
+          docker push atemndobs/fastapi:v1.3
 
 
       - name: Configure Git
