@@ -1,2 +1,4 @@
 uvicorn==0.14.0  # or whichever version you prefer
 fastapi==0.68.0
+litellm==0.1.345
+pandas==1.2.4

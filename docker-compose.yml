@@ -2,12 +2,12 @@ version: '3.8'
 
 services:
   fastapi_app:
-#    build:
-#      context: .
-#      dockerfile: Dockerfile
+    build:
+      context: .
+      dockerfile: Dockerfile
     image: fastapi:latest
     ports:
       - "2222:80"
     volumes:
       - ./app:/code/app
-   # command: ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "80"]
+    command: ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "80"]
