@@ -6,6 +6,27 @@ import pandas as pd
 from pydantic import BaseModel
 
 app = FastAPI()
+from fastapi.middleware.cors import CORSMiddleware
+
+# List of allowed origins
+origins = [
+    "http://localhost",        # For local development
+    "http://mage.tech",
+    "127.0.0.1",
+    "0.0.0.0"
+
+    "*"# If it's hosted on this domain
+]
+
+# Add middleware
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["GET", "POST"],
+    allow_headers=["Content-Type", "accept"],
+)
+
 
 # Load the CSV data into a DataFrame
 df = pd.read_csv("/code/app/quiz_data.csv")

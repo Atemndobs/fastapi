@@ -15,14 +15,14 @@ What system delivers a product or service to a Customer?,Operational Value Strea
 What system delivers a product or service to a Customer?,Kanban System,0
 What system delivers a product or service to a Customer?,Development Value Stream,0
 What system delivers a product or service to a Customer?,Dual Operating System,0
-Which of the following Agile Manifesto principles aligns with conducting a System Demo?,"Welcome changing requirements, even late in development",1
-Which of the following Agile Manifesto principles aligns with conducting a System Demo?,Working software is the primary measure of progress,0
+Which of the following Agile Manifesto principles aligns with conducting a System Demo?,"Welcome changing requirements, even late in development",0
+Which of the following Agile Manifesto principles aligns with conducting a System Demo?,Working software is the primary measure of progress,1
 Which of the following Agile Manifesto principles aligns with conducting a System Demo?,The best way to convey information is a face-to-face conversation,0
 Which of the following Agile Manifesto principles aligns with conducting a System Demo?,The team reflects on how to become more effective at regular intervals,0
-Which of the following roles has content authority for the ART Backlog?,Product Owner,1
+Which of the following roles has content authority for the ART Backlog?,Product Owner,0
 Which of the following roles has content authority for the ART Backlog?,Business Owner,0
 Which of the following roles has content authority for the ART Backlog?,System Architect,0
-Which of the following roles has content authority for the ART Backlog?,Product Management,0
+Which of the following roles has content authority for the ART Backlog?,Product Management,1
 What is a pattern for splitting Features into Stories?,Variations in data,1
 What is a pattern for splitting Features into Stories?,Team skills,0
 What is a pattern for splitting Features into Stories?,﻿﻿Tasks to complete,0
@@ -35,36 +35,36 @@ What is one benefit of capacity allocation?,It prevents different types of backl
 What is one benefit of capacity allocation?,It allocates developers and testers to an initiative,0
 What is one benefit of capacity allocation?,It ensures all Value Streams in the Portfolio are appropriately funded,0
 What is one benefit of capacity allocation?,It enables effective time-tracking,0
-Which role ensures that the ART has the Vision and Backlog needed to engage in PI Planning successfully?,Product Owner,1
-Which role ensures that the ART has the Vision and Backlog needed to engage in PI Planning successfully?,Release Train Engineer,0
+Which role ensures that the ART has the Vision and Backlog needed to engage in PI Planning successfully?,Product Owner,0
+Which role ensures that the ART has the Vision and Backlog needed to engage in PI Planning successfully?,Release Train Engineer,1
 Which role ensures that the ART has the Vision and Backlog needed to engage in PI Planning successfully?,Lean-Agile Center of Excellence,0
 Which role ensures that the ART has the Vision and Backlog needed to engage in PI Planning successfully?,Product Management,0
-What unit of time is used on Solution Roadmaps?,Days,1
+What unit of time is used on Solution Roadmaps?,Days,0
 What unit of time is used on Solution Roadmaps?,PIs,0
 What unit of time is used on Solution Roadmaps?,Iterations,0
-What unit of time is used on Solution Roadmaps?,Years,0
-Communicating and refining the Vision to the Agile Release Train during PI Planning supports which SAFe core value?,Transparency,1
+What unit of time is used on Solution Roadmaps?,Years,1
+Communicating and refining the Vision to the Agile Release Train during PI Planning supports which SAFe core value?,Transparency,0
 Communicating and refining the Vision to the Agile Release Train during PI Planning supports which SAFe core value?,Respect for People,0
 Communicating and refining the Vision to the Agile Release Train during PI Planning supports which SAFe core value?,Relentless Improvement,0
-Communicating and refining the Vision to the Agile Release Train during PI Planning supports which SAFe core value?,Alignment,0
-What is essential when communicating the Vision?,The importance of Feature prioritization﻿﻿,1
+Communicating and refining the Vision to the Agile Release Train during PI Planning supports which SAFe core value?,Alignment,1
+What is essential when communicating the Vision?,The importance of Feature prioritization﻿﻿,0
 What is essential when communicating the Vision?,The importance of Lean budget Guardrails,0
 What is essential when communicating the Vision?,The importance of empathy interviews﻿﻿,0
-What is essential when communicating the Vision?,The importance of non-functional requirements,0
-What is one influence on Solution and PI Roadmaps?,ART capacity,1
+What is essential when communicating the Vision?,The importance of non-functional requirements,1
+What is one influence on Solution and PI Roadmaps?,ART capacity,0
 What is one influence on Solution and PI Roadmaps?,Value Streams,0
-What is one influence on Solution and PI Roadmaps?,Market dynamics,0
+What is one influence on Solution and PI Roadmaps?,Market dynamics,1
 What is one influence on Solution and PI Roadmaps?,Customer-centric Features,0
 What is one tool that visualizes Features representing a workflow?,Story Maps,1
 What is one tool that visualizes Features representing a workflow?,Continuous Delivery Pipeline,0
 What is one tool that visualizes Features representing a workflow?,User Experience Design,0
 What is one tool that visualizes Features representing a workflow?,Team Kanban,0
-What are the minimum requirements for a Feature?,"Acceptance criteria, data models, and priority",1
+What are the minimum requirements for a Feature?,"Acceptance criteria, data models, and priority",0
 What are the minimum requirements for a Feature?,"Non-functional requirements, data models, and architecture",0
-What are the minimum requirements for a Feature?,"Name, benefit hypothesis, and acceptance criteria ",0
+What are the minimum requirements for a Feature?,"Name, benefit hypothesis, and acceptance criteria ",1
 What are the minimum requirements for a Feature?,"Benefit hypothesis, acceptance criteria, and priority",0
-Which role does Product Management work with to prioritize Enablers?,Solution Management,1
-Which role does Product Management work with to prioritize Enablers?,System Architect,0
+Which role does Product Management work with to prioritize Enablers?,Solution Management,0
+Which role does Product Management work with to prioritize Enablers?,System Architect,1
 Which role does Product Management work with to prioritize Enablers?,Development Manager,0
 Which role does Product Management work with to prioritize Enablers?,Product Owner,0
 What is one input to the Vision?,Customer feedback,1
@@ -74,108 +74,108 @@ What is one input to the Vision?,Feature context,0
 What is one method for designing the end-to-end Customer experience?,Journey mapping,1
 What is one method for designing the end-to-end Customer experience?,Feature storming,0
 What is one method for designing the end-to-end Customer experience?,Persona development,0
-What is one method for designing the end-to-end Customer experience?,Whole-product thinking,0
+What is one method for designing the end-to-end Customer experience?,Whole-product thinking,1
 "What is defined as a product, service, or system delivered to the Customer?",Solution,1
 "What is defined as a product, service, or system delivered to the Customer?",Capability,0
 "What is defined as a product, service, or system delivered to the Customer?",Value,0
 "What is defined as a product, service, or system delivered to the Customer?",Epic,0
-What is one method to establish a team's velocity?,Add the Story points for all Features completed in the Iteration,1
+What is one method to establish a team's velocity?,Add the Story points for all Features completed in the Iteration,0
 What is one method to establish a team's velocity?,﻿﻿Add the Story points for all the Stories planned for the Iteration,0
 What is one method to establish a team's velocity?,Calculate the percentage planned versus actual Stories completed during an Iteration,0
-What is one method to establish a team's velocity?,﻿﻿Compare the average Story points completed throughout the previous Iterations,0
-What helps visualize work during PI Planning?,ART PI Objectives,1
-What helps visualize work during PI Planning?,ART Planning Board,0
+What is one method to establish a team's velocity?,﻿﻿Compare the average Story points completed throughout the previous Iterations,1
+What helps visualize work during PI Planning?,ART PI Objectives,0
+What helps visualize work during PI Planning?,ART Planning Board,1
 What helps visualize work during PI Planning?,ART Predictability Measure,0
 What helps visualize work during PI Planning?,ART PI Risks,0
-Which is developed by teams and rolled up to the ART level during PI Planning?,Milestones,1
+Which is developed by teams and rolled up to the ART level during PI Planning?,Milestones,0
 Which is developed by teams and rolled up to the ART level during PI Planning?,Dependencies,0
-Which is developed by teams and rolled up to the ART level during PI Planning?,PI Objectives,0
+Which is developed by teams and rolled up to the ART level during PI Planning?,PI Objectives,1
 Which is developed by teams and rolled up to the ART level during PI Planning?,ART PI Risks,0
-What is one characteristic of writing effective PI Objectives?,Including critical Stories,1
+What is one characteristic of writing effective PI Objectives?,Including critical Stories,0
 What is one characteristic of writing effective PI Objectives?,Listing out committed Features,0
 What is one characteristic of writing effective PI Objectives?,Identifying significant risks,0
-What is one characteristic of writing effective PI Objectives?,Describing the value,0
-Which statement describes a mitigated ART PI Risk?,Someone has taken the responsibility of the risk,1
-Which statement describes a mitigated ART PI Risk?,There is a strategy to adjust the plan as necessary,0
+What is one characteristic of writing effective PI Objectives?,Describing the value,1
+Which statement describes a mitigated ART PI Risk?,Someone has taken the responsibility of the risk,0
+Which statement describes a mitigated ART PI Risk?,There is a strategy to adjust the plan as necessary,1
 Which statement describes a mitigated ART PI Risk?,The risk has been addressed and is no longer a concern,0
 Which statement describes a mitigated ART PI Risk?,"Nothing more can be done, so if a risk occurs, release may be compromised",0
-What is one step when determining initial team capacity during PI Planning?,Compare final team capacity across all teams,1
+What is one step when determining initial team capacity during PI Planning?,Compare final team capacity across all teams,0
 What is one step when determining initial team capacity during PI Planning?,Add together all of the points from recently completed Features,0
 What is one step when determining initial team capacity during PI Planning?,Ensure Product Owner/Product Manager approval for all time-based capacity adjustments,0
-What is one step when determining initial team capacity during PI Planning?,"Subtract one point for every team member's vacation day, public holiday, or training day",0
-What is one strategy for managing complex critical path challenges?,Allocate work between teams based on forecasted capacity,1
+What is one step when determining initial team capacity during PI Planning?,"Subtract one point for every team member's vacation day, public holiday, or training day",1
+What is one strategy for managing complex critical path challenges?,Allocate work between teams based on forecasted capacity,0
 What is one strategy for managing complex critical path challenges?,Sequence work to eliminate same Iteration dependencies,0
 What is one strategy for managing complex critical path challenges?,Distribute work to other teams,0
-What is one strategy for managing complex critical path challenges?,Adjust work between teams or split Features and Stories,0
-Why is it important to establish a definition of done?,To create standardized work between all Agile Teams,1
-Why is it important to establish a definition of done?,To create alignment on when Stories are complete,0
+What is one strategy for managing complex critical path challenges?,Adjust work between teams or split Features and Stories,1
+Why is it important to establish a definition of done?,To create standardized work between all Agile Teams,0
+Why is it important to establish a definition of done?,To create alignment on when Stories are complete,1
 Why is it important to establish a definition of done?,To enable Scrum Masters/Team Coaches to enforce quality,0
 Why is it important to establish a definition of done?,To ensure Features provide the expected business benefits,0
-What is the next action for improvement items identified during the Iteration Retrospective?,They are escalated to the Business Owners,1
-What is the next action for improvement items identified during the Iteration Retrospective?,They are entered as Stories in the Team Backlog,0
+What is the next action for improvement items identified during the Iteration Retrospective?,They are escalated to the Business Owners,0
+What is the next action for improvement items identified during the Iteration Retrospective?,They are entered as Stories in the Team Backlog,1
 What is the next action for improvement items identified during the Iteration Retrospective?,They are given to the Scrum Master/Team Coach who resolves them,0
 What is the next action for improvement items identified during the Iteration Retrospective?,They are ROAMed with the rest of the risks,0
-What is a PI Planning input that demonstrates how Product Management plans to accomplish the Vision?,The ART planning board,1
+What is a PI Planning input that demonstrates how Product Management plans to accomplish the Vision?,The ART planning board,0
 What is a PI Planning input that demonstrates how Product Management plans to accomplish the Vision?,The Team Backlog,0
-What is a PI Planning input that demonstrates how Product Management plans to accomplish the Vision?,The top ten Features,0
+What is a PI Planning input that demonstrates how Product Management plans to accomplish the Vision?,The top ten Features,1
 What is a PI Planning input that demonstrates how Product Management plans to accomplish the Vision?,The business context,0
-Why do Agile Teams use Iteration Goals?,To hold the team accountable to their PI Objectives,1
+Why do Agile Teams use Iteration Goals?,To hold the team accountable to their PI Objectives,0
 Why do Agile Teams use Iteration Goals?,To ensure the team accomplishes the committed Stories for each Iteration,0
-Why do Agile Teams use Iteration Goals?,To align the team members and the Product Owner to a common purpose,0
+Why do Agile Teams use Iteration Goals?,To align the team members and the Product Owner to a common purpose,1
 Why do Agile Teams use Iteration Goals?,To summarize the business outcomes an Agile Team intends to achieve during the PI,0
-What can increase the effectiveness of Backlog Refinement?,Include a few team members,1
+What can increase the effectiveness of Backlog Refinement?,Include a few team members,0
 What can increase the effectiveness of Backlog Refinement?,Refine Stories during Iteration Planning,0
-What can increase the effectiveness of Backlog Refinement?,Schedule the event on a regular cadence,0
+What can increase the effectiveness of Backlog Refinement?,Schedule the event on a regular cadence,1
 What can increase the effectiveness of Backlog Refinement?,Have separate meetings with subject matter experts,0
-What is one responsibility of the Product Owner during Team Sync?,To facilitate the event,1
+What is one responsibility of the Product Owner during Team Sync?,To facilitate the event,0
 What is one responsibility of the Product Owner during Team Sync?,To relay Customer feedback,0
-What is one responsibility of the Product Owner during Team Sync?,To clarify Story intent,0
+What is one responsibility of the Product Owner during Team Sync?,To clarify Story intent,1
 What is one responsibility of the Product Owner during Team Sync?,To add new work into the Iteration,0
-What is enabled by the Continuous Delivery Pipeline?,Transparent measurements,1
+What is enabled by the Continuous Delivery Pipeline?,Transparent measurements,0
 What is enabled by the Continuous Delivery Pipeline?,New functionality delivered more frequently,0
 What is enabled by the Continuous Delivery Pipeline?,End-to-end testing,0
-What is enabled by the Continuous Delivery Pipeline?,A predictable release cadence,0
-What makes value available when it's needed?,Continuous Deployment,1
+What is enabled by the Continuous Delivery Pipeline?,A predictable release cadence,1
+What makes value available when it's needed?,Continuous Deployment,0
 What makes value available when it's needed?,DevOps ,0
 What makes value available when it's needed?,Infrastructure,0
-What makes value available when it's needed?,Release on Demand,0
-Which Agile Team event supports relentless improvement?,Inspect and Adapt,1
-Which Agile Team event supports relentless improvement?,Iteration Retrospective,0
+What makes value available when it's needed?,Release on Demand,1
+Which Agile Team event supports relentless improvement?,Inspect and Adapt,0
+Which Agile Team event supports relentless improvement?,Iteration Retrospective,1
 Which Agile Team event supports relentless improvement?,System Demo,0
 Which Agile Team event supports relentless improvement?,Team Sync,0
-What does a Kanban board demonstrate?,The cost of delay of each item on the board,1
+What does a Kanban board demonstrate?,The cost of delay of each item on the board,0
 What does a Kanban board demonstrate?,The accumulated value of a team's work,0
 What does a Kanban board demonstrate?,A burndown chart of work completed in the Iteration ,0
-What does a Kanban board demonstrate?,Where a team has too much work-in-process (WIP),0
-What is one way Kanban boards are used in SAFe?,To manage non-functional requirements (NFRs) in the backlog,1
+What does a Kanban board demonstrate?,Where a team has too much work-in-process (WIP),1
+What is one way Kanban boards are used in SAFe?,To manage non-functional requirements (NFRs) in the backlog,0
 What is one way Kanban boards are used in SAFe?,To manage PI Objectives,0
 What is one way Kanban boards are used in SAFe?,To manage runway cadence,0
-What is one way Kanban boards are used in SAFe?,To manage WIP limits,0
+What is one way Kanban boards are used in SAFe?,To manage WIP limits,1
 "In the first step of SAFe's Continuous Delivery Pipeline, Product Owners and Product Managers do what activity?",Hypothesize what would create value for Customers,1
 "In the first step of SAFe's Continuous Delivery Pipeline, Product Owners and Product Managers do what activity?",Ensure the Architecture team has sufficient capacity,0
 "In the first step of SAFe's Continuous Delivery Pipeline, Product Owners and Product Managers do what activity?",Negotiate Supplier contracts,0
 "In the first step of SAFe's Continuous Delivery Pipeline, Product Owners and Product Managers do what activity?",Prioritize the Team Backlog,0
-Which of the following events shows how well the ART is progressing toward meeting the PI Objectives?,Backlog Refinement,1
+Which of the following events shows how well the ART is progressing toward meeting the PI Objectives?,Backlog Refinement,0
 Which of the following events shows how well the ART is progressing toward meeting the PI Objectives?,Inspect and Adapt,0
 Which of the following events shows how well the ART is progressing toward meeting the PI Objectives?,PI Planning,0
-Which of the following events shows how well the ART is progressing toward meeting the PI Objectives?,PO Sync,0
-What is the primary purpose of PO Sync?,To build PI Objectives and improve alignment,1
+Which of the following events shows how well the ART is progressing toward meeting the PI Objectives?,PO Sync,1
+What is the primary purpose of PO Sync?,To build PI Objectives and improve alignment,0
 What is the primary purpose of PO Sync?,To conduct backlog refinement,0
 What is the primary purpose of PO Sync?,To align with Coach Sync participants on the status of the PI,0
-What is the primary purpose of PO Sync?,To assess progress of the PI and adjust scope and priority as needed,0
+What is the primary purpose of PO Sync?,To assess progress of the PI and adjust scope and priority as needed,1
 How often does the Innovation and Planning (IP) Iteration occur?,During every PI,1
 How often does the Innovation and Planning (IP) Iteration occur?,Every two Iteration,0
 How often does the Innovation and Planning (IP) Iteration occur?,Every two PIs,0
 How often does the Innovation and Planning (IP) Iteration occur?,Once per year,0
-What increases the effectiveness of System Demos?,Spend a lot of time preparing for the demo,1
+What increases the effectiveness of System Demos?,Spend a lot of time preparing for the demo,0
 What increases the effectiveness of System Demos?,﻿﻿Focus on team-level Metrics,0
-What increases the effectiveness of System Demos?,﻿﻿Consider how and what to demo during Iteration Planning,0
+What increases the effectiveness of System Demos?,﻿﻿Consider how and what to demo during Iteration Planning,1
 What increases the effectiveness of System Demos?,﻿﻿Limit team attendance to minimize disruptions to the team,0
-What is included in the Inspect and Adapt agenda?,Management review and confidence vote,1
+What is included in the Inspect and Adapt agenda?,Management review and confidence vote,0
 What is included in the Inspect and Adapt agenda?,System Demo,0
-What is included in the Inspect and Adapt agenda?,Quantitative and qualitative measurement,0
+What is included in the Inspect and Adapt agenda?,Quantitative and qualitative measurement,1
 What is included in the Inspect and Adapt agenda?,ART Backlog refinement,0
-When should Agile Teams make time for innovation?,At a consistent time each day during the Iteration,1
+When should Agile Teams make time for innovation?,At a consistent time each day during the Iteration,0
 When should Agile Teams make time for innovation?,When there are Enabler Stories in the Backlog,0
 When should Agile Teams make time for innovation?,Continuously throughout the PI,0
-When should Agile Teams make time for innovation?,During the Innovation and Planning Iteration,0
+When should Agile Teams make time for innovation?,During the Innovation and Planning Iteration,1
