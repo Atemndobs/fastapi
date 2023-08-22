@@ -14,7 +14,7 @@ origins = [
     "http://mage.tech",
     "127.0.0.1",
     "0.0.0.0"
-
+    "agile.atmkeng.de",
     "*"# If it's hosted on this domain
 ]
 
