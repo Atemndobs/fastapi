@@ -2,12 +2,20 @@ version: '3.8'
 
 services:
   fastapi_app:
+    container_name: fastapi
     build:
       context: .
       dockerfile: Dockerfile
     image: fastapi:latest
     ports:
       - "2222:80"
+
+    restart: on-failure
     volumes:
       - ./app:/code/app
-    command: ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "80"]
+    command: ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "80",--reload]
+
+networks:
+  default:
+    name: laravel_sail
+    external: true

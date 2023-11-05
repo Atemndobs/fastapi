@@ -2,3 +2,9 @@ uvicorn==0.14.0  # or whichever version you prefer
 fastapi==0.68.0
 litellm==0.1.345
 pandas==1.2.4
+voyager==2.0.2
+gradio
+promptflow
+promptflow-tools
+numpy==1.21.0  # for numerical operations
+sklearn
