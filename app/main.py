@@ -37,4 +37,9 @@ app.include_router(quiz.router, prefix="/api/v1/quiz", tags=["quiz"])
 
 app.include_router(songs.router, prefix="/api/v1/songs", tags=["songs"])
 
+@app.get("/health")
+def health_check():
+    return {"status": "healthy"}
+
+
 #app.include_router(gradio.router, prefix="/api/v1", tags=["gradio"])
