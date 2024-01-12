@@ -11,8 +11,6 @@ from fastapi.middleware.cors import CORSMiddleware
 
 router = APIRouter()
 
-#app = FastAPI()
-
 # Load the CSV data into a DataFrame
 df = pd.read_csv("/code/app/quiz_data.csv")
 

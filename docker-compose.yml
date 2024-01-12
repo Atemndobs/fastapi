@@ -6,7 +6,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    image: fastapi:latest
+#    image: atemndobs/fastapi:v1.8
     ports:
       - "2222:80"
 
