@@ -8,6 +8,13 @@ import pandas as pd
 from pydantic import BaseModel
 from fastapi.middleware.cors import CORSMiddleware
 
+from diagrams import Diagram
+from diagrams.aws.compute import EC2
+from diagrams.aws.database import RDS
+from diagrams.aws.network import ELB, Route53, VPC
+from diagrams.aws.security import WAF
+from diagrams.aws.storage import S3
+
 
 router = APIRouter()
 
@@ -71,3 +78,27 @@ def validate_answer(question_id: int, answer: Answer):
     is_correct = bool(df.iloc[start_idx + answer.answer]["Answer"] == 1)
     return {"is_correct": is_correct}
 
+
+
+@router.get("/diagram")
+def create_diagram():
+    with Diagram("Clustered Web Services", show=False):
+        dns = Route53("dns")
+        lb = ELB("lb")
+
+        with Cluster("Services"):
+            svc_group = [ECS("web1"),
+                         ECS("web2"),
+                         ECS("web3")]
+
+        with Cluster("DB Cluster"):
+            db_primary = RDS("userdb")
+            db_primary - [RDS("userdb ro")]
+
+        memcached = ElastiCache("memcached")
+
+        dns >> lb >> svc_group
+        svc_group >> db_primary
+        svc_group >> memcached
+
+    return {"message": "Diagram created successfully.", "file_path": "/path/to/store/diagrams/Disease Management Platform Architecture.png"}

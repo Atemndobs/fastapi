@@ -8,3 +8,13 @@ promptflow
 promptflow-tools
 numpy
 scikit-learn
+
+diagrams
+graphviz
+graphviz2drawio
+crewai
+
+duckduckgo-search
+python-dotenv
+pyautogen
+autogenstudio

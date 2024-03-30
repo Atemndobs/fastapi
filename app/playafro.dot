@@ -1,0 +1,34 @@
+digraph PlayAfro {
+    subgraph cluster_aws {
+        label = "AWS Cloud";
+        MySQL [label="MySQL Database"];
+        NextJS [label="Next.js Web App"];
+        S3Bucket [label="S3 Bucket for Songs and Static Assets"];
+        CronJob [label="Weekly Chart Classification Job"];
+
+        MySQL -> NextJS;
+        NextJS -> S3Bucket;
+        CronJob -> MySQL;
+    }
+
+    subgraph cluster_users {
+        label = "Users";
+        ArtistsLabels [label="Artists/Labels"];
+        DJs [label="DJs"];
+        AdminUsers [label="Admin Users"];
+    }
+
+    subgraph cluster_web_pages {
+        label = "Web Pages and APIs";
+        LandingPage [label="Landing Page"];
+        ChartPage [label="Chart Page"];
+        LoginPage [label="Login Page"];
+        SongDetailPage [label="Song Detail Page"];
+        AdminDashboard [label="Admin Dashboard"];
+
+        NextJS -> {LandingPage ChartPage LoginPage SongDetailPage};
+        S3Bucket -> NextJS;
+        {LandingPage ChartPage LoginPage SongDetailPage} -> AdminDashboard;
+    }
+
+}
