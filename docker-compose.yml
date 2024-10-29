@@ -1,18 +1,13 @@
 services:
   fastapi_app:
     container_name: fastapi
-    build:
-      context: .
-      dockerfile: Dockerfile
-#    image: atemndobs/fastapi:v1.9
+    # build:
+    #   context: .
+    #   dockerfile: Dockerfile
+    image: atemndobs/fastapi-amd64:v0.0.2
     ports:
       - "2222:80"
       - "2224:8081"
       - "5555:1234"
     volumes:
       - ./app:/code/app
-
-networks:
-  default:
-    name: laravel_sail
-    external: true

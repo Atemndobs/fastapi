@@ -6,3 +6,7 @@ numpy
 youtube-transcript-api
 pydantic
 colorlog
+scrapy
+crochet
+beautifulsoup4
+requests

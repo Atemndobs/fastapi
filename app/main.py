@@ -1,12 +1,8 @@
-from typing import Union
-from fastapi import FastAPI, HTTPException, Query, Request
-from fastapi.staticfiles import StaticFiles
-from fastapi.middleware.cors import CORSMiddleware
-import os
-import logging
-import colorlog
+# main.py
 
-from . import quiz  # Only keeping the quiz module
+from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
+from . import quiz, apartment
 
 app = FastAPI()
 
@@ -30,8 +26,9 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# Include only the quiz router
+# Include routers
 app.include_router(quiz.router, prefix="/api/v1/quiz", tags=["quiz"])
+app.include_router(apartment.router, prefix="/api/v1/apartment", tags=["apartment"])
 
 @app.get("/health")
 def health_check():

@@ -1,25 +1,29 @@
-# Use the official Python image as a parent image
+# Start from the official Python image
 FROM python:3.9
 
-# Set the working directory in the container
+# Set the working directory
 WORKDIR /code
 
-# Copy the requirements file into the container
+# Copy requirements first to leverage Docker cache
 COPY ./requirements.txt /code/requirements.txt
 
-# Install and upgrade pip, then install dependencies from requirements.txt
-RUN pip install --upgrade pip
-RUN pip install --no-cache-dir -r /code/requirements.txt
+# Install system dependencies for Scrapy and Python dependencies
+RUN apt-get update && \
+    apt-get install -y gcc libxml2-dev libxslt1-dev libz-dev libffi-dev libssl-dev && \
+    rm -rf /var/lib/apt/lists/* && \
+    pip install --no-cache-dir --upgrade pip && \
+    pip install --no-cache-dir -r /code/requirements.txt
 
-# Copy the app directory and start script into the container
+# Copy application code
 COPY ./app /code/app
 COPY ./start.sh /code/start.sh
 
 # Make the start script executable
 RUN chmod +x /code/start.sh
 
-# Expose only the necessary port for FastAPI (usually 80 or 8000 by convention)
+# Expose necessary ports
 EXPOSE 80
+EXPOSE 2222
 
-# Set the start script as the entry point
+# Set entrypoint
 ENTRYPOINT ["/code/start.sh"]
