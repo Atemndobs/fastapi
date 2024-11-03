@@ -7,12 +7,9 @@ WORKDIR /code
 # Copy requirements first to leverage Docker cache
 COPY ./requirements.txt /code/requirements.txt
 
-# Copy .env file
-COPY ./.env /code/.env
-
 # Install system dependencies for Scrapy and Python dependencies
 RUN apt-get update && \
-    apt-get install -y --no-install-recommends gcc libxml2-dev libxslt1-dev zlib1g-dev libffi-dev libssl-dev && \
+    apt-get install -y gcc libxml2-dev libxslt1-dev libz-dev libffi-dev libssl-dev && \
     rm -rf /var/lib/apt/lists/* && \
     pip install --no-cache-dir --upgrade pip && \
     pip install --no-cache-dir -r /code/requirements.txt

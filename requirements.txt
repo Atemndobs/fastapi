@@ -10,3 +10,5 @@ scrapy
 crochet
 beautifulsoup4
 requests
+geopy
+python-dotenv  # Add this line for dotenv support
