@@ -8,7 +8,7 @@ WORKDIR /code
 COPY ./requirements.txt /code/requirements.txt
 
 # Copy .env file
-COPY ./.env /code/.env
+# COPY ./.env /code/.env
 
 # Install system dependencies for Scrapy and Python dependencies
 RUN apt-get update && \

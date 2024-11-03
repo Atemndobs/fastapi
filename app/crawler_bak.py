@@ -42,3 +42,4 @@ async def crawl_apartment(crawl_request: CrawlRequest):
 
     except requests.exceptions.RequestException as e:
         raise HTTPException(status_code=500, detail=f"Request to Crawl4AI failed: {str(e)}")
+
