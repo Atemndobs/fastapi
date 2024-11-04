@@ -11,4 +11,4 @@ services:
     volumes:
       - ./app:/code/app
     environment:
-      GOOGLE_MAPS_API_KEY: ""  # Add your actual API key here
+      GOOGLE_MAPS_API_KEY: "AIzaSyB_mUQGA1yNwhRg1TuZ6nsAdtjVAzs0djo"  # Add your actual API key here
