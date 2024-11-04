@@ -27,10 +27,10 @@ class ModeDistance(BaseModel):
 class TransitDetails(BaseModel):
     line_nr: str
     line_name: str
-    line_type: str
     line_icon: str
     line_color: Optional[str]  # Optional
     vehicle_type: str
+    num_stops: str 
 
 class TransitInfo(ModeDistance):
     transit_details: List[TransitDetails]
@@ -92,10 +92,10 @@ def get_transit_info(origin: str, destination: str) -> TransitInfo:
                         transit_detail = TransitDetails(
                             line_nr=transit_info['line']['short_name'],  # or transit_info['line']['text']
                             line_name=transit_info['line']['vehicle']['name'],
-                            line_type=transit_info['line']['vehicle']['type'],
                             line_icon=transit_info['line']['vehicle']['icon'],
                             line_color=transit_info['line'].get('color'),
-                            vehicle_type=transit_info['line']['vehicle']['name']
+                            vehicle_type=transit_info['line']['vehicle']['name'],
+                            num_stops=transit_info['num_stops']
                         )
                         transit_details_list.append(transit_detail)
                         print(f"{transit_details_list}")
