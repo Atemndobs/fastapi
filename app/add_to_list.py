@@ -9,7 +9,9 @@ router = APIRouter()
 
 @router.post("/add_to_list")
 async def add_to_list(request: AddToListRequest):
-    n8n_webhook_url = "https://n8n.atemkeng.de/webhook/5fb74a0f-a6a9-402d-aa5f-6271e874a769"
+    n8n_webhook_url = "https://n8n.atemkeng.info/webhook/5fb74a0f-a6a9-402d-aa5f-6271e874a769"
+    # n8n_webhook_url = "https://n8n.atemkeng.info/webhook-test/5fb74a0f-a6a9-402d-aa5f-6271e874a769"   
+
 
     # Step 1: Fetch distance data
     try:

@@ -105,3 +105,9 @@ class AddToListRequest(BaseModel):
     screenshot: Optional[bool] = False
     user_agent: Optional[str] = None
     verbose: Optional[bool] = False
+
+class ApartmentSearchResponse(BaseModel):
+    urls: List[str]  # List to hold extracted apartment URLs
+
+class PksRequest(BaseModel):
+    pks: List[int]

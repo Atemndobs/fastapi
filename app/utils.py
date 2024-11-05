@@ -2,9 +2,13 @@
 
 import requests
 from fastapi import HTTPException
-from .models import DistanceRequest, DistanceResponse, TransitDetails, ModeDistance, TransitInfo, CrawlRequest, CrawlResponse, ApartmentDetails
+from .models import DistanceRequest, DistanceResponse, TransitDetails, ModeDistance, TransitInfo, CrawlRequest, CrawlResponse, ApartmentDetails, ApartmentSearchResponse, PksRequest
 from dotenv import load_dotenv
 from bs4 import BeautifulSoup
+import re
+
+import json
+from typing import List
 import os
 # Load environment variables from .env file
 load_dotenv()
@@ -218,3 +222,154 @@ def crawl_apartment_data(crawl_request: CrawlRequest) -> CrawlResponse:
         raise HTTPException(status_code=500, detail=f"Request to Crawl4AI failed: {str(e)}")
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"An error occurred: {str(e)}")
+
+def crawl_url(crawl_request: CrawlRequest) -> CrawlResponse:
+    try:
+        response = requests.post(
+            "https://scrape.cloud.atemkeng.de/crawl",
+            headers={"Content-Type": "application/json"},
+            json=crawl_request.dict(exclude_none=True)
+        )
+        response.raise_for_status()
+        json_response = response.json()
+        
+
+        
+        return json_response
+
+    except requests.exceptions.RequestException as e:
+        raise HTTPException(status_code=500, detail=f"Request to Crawl4AI failed: {str(e)}")
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"An error occurred: {str(e)}")
+
+
+def extract_apartment_urls(html_content: str) -> List[str]:
+    """
+    Extracts apartment URLs from the HTML content of the crawl result.
+    Looks for URLs with the pattern used by Flatfox for apartment listings.
+    """
+    # Print or log HTML content to verify it's being retrieved
+    print("HTML Content:", html_content[:500])  # Print first 500 characters for debugging
+
+    # Regular expression pattern to match apartment URLs on flatfox.ch
+    pattern = r'https://flatfox\.ch/en/flat/[a-zA-Z0-9\-/]+'
+    urls = re.findall(pattern, html_content)
+
+    # If no URLs are found, try parsing with BeautifulSoup as a fallback
+    if not urls:
+        soup = BeautifulSoup(html_content, 'html.parser')
+        urls = [link.get('href') for link in soup.find_all('a', href=True) if 'flatfox.ch/en/flat/' in link.get('href')]
+
+    # Remove duplicates and return
+    return list(set(urls))
+
+
+def search_apartment_urls(search_url: str) -> ApartmentSearchResponse:
+    # Send the initial request to the crawl endpoint with the search URL
+    crawl_request_payload = {
+        "appart_url": search_url,
+        "platform": "flatfox.ch",
+        "address": "search-result",
+        "id": "search",
+        "target_address": "INGTES AG, Bahnhofstrasse 94, 5000 Aarau, Switzerland",
+        "urls": [search_url],
+        "include_raw_html": False,
+        "bypass_cache": False,
+        "extract_blocks": False,
+        "word_count_threshold": 5,
+        "extraction_strategy": "NoExtractionStrategy",
+        "chunking_strategy": "RegexChunking",
+        "verbose": True
+    }
+    
+    response = requests.post(
+        "https://fastapi.curator.atemkeng.eu/api/v1/apartment/crawl",
+        json=crawl_request_payload
+    )
+    response.raise_for_status()
+    data = response.json()
+
+    # Parse HTML to extract URLs
+    apartment_urls = []
+    if "cleaned_html" in data:
+        soup = BeautifulSoup(data["cleaned_html"], "html.parser")
+        links = soup.select("a[href*='/flat/']")
+        apartment_urls = ["https://flatfox.ch" + link["href"] for link in links if "/flat/" in link["href"]]
+
+    return ApartmentSearchResponse(urls=apartment_urls)
+
+
+def fetch_apartment_data(api_url: str, pks: List[int]):
+    """
+    Fetches apartment data from the Flatfox API and extracts apartment URLs.
+    """
+    try:
+        response = requests.get(api_url, params={
+            "expand": "cover_image",
+            "include": "is_liked,is_disliked,is_subscribed",
+            "limit": 0,
+            "pk": pks
+        })
+        response.raise_for_status()
+
+        # Extract JSON data
+        json_response = response.json()
+
+        return json_response
+
+    except requests.exceptions.RequestException as e:
+        raise HTTPException(status_code=500, detail=f"Request to Flatfox API failed: {str(e)}")
+
+
+
+
+def extract_pks_from_html(html_content: str) -> List[int]:
+    """
+    Parses HTML content to extract 'pk' values from JSON objects embedded in the HTML
+    and from the text of elements with class 'abv'.
+    """
+
+    print(html_content)
+    pks = set()  # Use a set to ensure unique values
+    try:
+        # Parse HTML with BeautifulSoup
+        soup = BeautifulSoup(html_content, "html.parser")
+        
+        # Look for script tags that may contain JSON data with `pk` values
+        for script in soup.find_all("script", type="application/json"):
+            try:
+                # Parse JSON content from the script tag
+                json_data = json.loads(script.string)
+                
+                # Check if JSON is a dictionary with pk entries
+                if isinstance(json_data, dict):
+                    pk = json_data.get("pk")
+                    if isinstance(pk, int):  # Only add if `pk` is an integer
+                        pks.add(pk)
+                
+                # If JSON is a list, iterate and look for `pk` keys
+                elif isinstance(json_data, list):
+                    for item in json_data:
+                        pk = item.get("pk") if isinstance(item, dict) else None
+                        if isinstance(pk, int):  # Only add if `pk` is an integer
+                            pks.add(pk)
+            except (json.JSONDecodeError, TypeError, ValueError):
+                continue
+        
+        # Now extract pks from text of elements with class 'abv'
+        for abv_element in soup.find_all(class_='abv'):
+            # Assuming pks are formatted as integers in the text (you may need to adjust regex based on the actual format)
+            text_content = abv_element.get_text()
+            found_pks = re.findall(r'\b\d+\b', text_content)  # Find all integers in the text
+            for pk_str in found_pks:
+                try:
+                    pk = int(pk_str)
+                    pks.add(pk)
+                except ValueError:
+                    continue  # Skip if the conversion fails
+
+        # Convert the set back to a list for the final response
+        return list(pks)
+    
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Error parsing HTML for pks: {str(e)}")
