@@ -1,0 +1,320 @@
+{
+    "geocoded_waypoints":[
+        {
+            "geocoder_status":"OK",
+            "place_id":"ChIJoWH2JA48kEcRT6isijDCSQ4",
+            "types":[
+                "street_address"
+            ]
+        },
+        {
+            "geocoder_status":"OK",
+            "place_id":"ChIJp_eKm_o7kEcR23Vl8xuSFWs",
+            "types":[
+                "premise"
+            ]
+        }
+    ],
+    "routes":[
+        {
+            "bounds":{
+                "northeast":{
+                    "lat":47.39272649999999,
+                    "lng":8.0745066
+                },
+                "southwest":{
+                    "lat":47.3876249,
+                    "lng":8.045755699999999
+                }
+            },
+            "copyrights":"Map data ©2024 Google",
+            "legs":[
+                {
+                    "arrival_time":{
+                        "text":"1: 21\u202fPM",
+                        "time_zone":"Europe/Zurich",
+                        "value":1731154877
+                    },
+                    "departure_time":{
+                        "text":"1: 07\u202fPM",
+                        "time_zone":"Europe/Zurich",
+                        "value":1731154040
+                    },
+                    "distance":{
+                        "text":"3.3 km",
+                        "value":3274
+                    },
+                    "duration":{
+                        "text":"14 mins",
+                        "value":837
+                    },
+                    "end_address":"Bahnhofstrasse 94, 5000 Aarau, Switzerland",
+                    "end_location":{
+                        "lat":47.39272649999999,
+                        "lng":8.053448
+                    },
+                    "start_address":"Brummelmattstrasse 11, 5033 Buchs, Switzerland",
+                    "start_location":{
+                        "lat":47.3876249,
+                        "lng":8.073569899999999
+                    },
+                    "steps":[
+                        {
+                            "distance":{
+                                "text":"0.2 km",
+                                "value":199
+                            },
+                            "duration":{
+                                "text":"3 mins",
+                                "value":160
+                            },
+                            "end_location":{
+                                "lat":47.3887452,
+                                "lng":8.0739079
+                            },
+                            "html_instructions":"Walk to Buchs AG, Gysistrasse",
+                            "polyline":{
+                                "points":"skf`Hyzgp@Ak@CmAAo@]QM@C@m@Vu@X]L]RETCH"
+                            },
+                            "start_location":{
+                                "lat":47.3876249,
+                                "lng":8.073569899999999
+                            },
+                            "steps":[
+                                {
+                                    "distance":{
+                                        "text":"64 m",
+                                        "value":64
+                                    },
+                                    "duration":{
+                                        "text":"1 min",
+                                        "value":52
+                                    },
+                                    "end_location":{
+                                        "lat":47.3876637,
+                                        "lng":8.0744189
+                                    },
+                                    "html_instructions":"Head <b>east</b>",
+                                    "polyline":{
+                                        "points":"skf`Hyzgp@Ak@CmAAo@"
+                                    },
+                                    "start_location":{
+                                        "lat":47.3876249,
+                                        "lng":8.073569899999999
+                                    },
+                                    "travel_mode":"WALKING"
+                                },
+                                {
+                                    "distance":{
+                                        "text":"0.1 km",
+                                        "value":135
+                                    },
+                                    "duration":{
+                                        "text":"2 mins",
+                                        "value":108
+                                    },
+                                    "end_location":{
+                                        "lat":47.3887452,
+                                        "lng":8.0739079
+                                    },
+                                    "html_instructions":"Sharp <b>left</b> onto <b>Mitteldorfstrasse</b>",
+                                    "maneuver":"turn-sharp-left",
+                                    "polyline":{
+                                        "points":"{kf`Hc`hp@]QM@C@m@Vu@X]L]RETCH"
+                                    },
+                                    "start_location":{
+                                        "lat":47.3876637,
+                                        "lng":8.0744189
+                                    },
+                                    "travel_mode":"WALKING"
+                                }
+                            ],
+                            "travel_mode":"WALKING"
+                        },
+                        {
+                            "distance":{
+                                "text":"2.9 km",
+                                "value":2851
+                            },
+                            "duration":{
+                                "text":"8 mins",
+                                "value":480
+                            },
+                            "end_location":{
+                                "lat":47.391834,
+                                "lng":8.051041
+                            },
+                            "html_instructions":"Bus towards Küttigen, Kreuz",
+                            "polyline":{
+                                "points":"srf`H{|gp@AA?BIZKx@M`BOr@Sl@MZi@pASp@aAfCCJKd@Kd@CR?@Cl@AXEZCf@?HE`@AJA@A@A?A@A@?@A@?@A@?@A@?@A@?@?@?@?@A@?@?@?B?@?@?@?@?@?B?@@@?@?@@@?@@@?@@@?@?@@?@??@@@@??@@?@?@@B~@Aj@?N?lA?dA?PAbE?xA?H?Z?rDAtA?z@AdA?B@b@?PALAJAHId@ADKh@Q|@CPKp@g@|CO|@CNYfBABSfAGb@Mv@Ot@Gd@If@Mr@CLSdAO|@AJCJADG^CJIVMJU^AAA?AAC?A?A?C?A?A@A?A@?@A??@A@A@?@A@?@?@A@?@?@?@?@A@?@?@?@?@@@?@?@?@?@@@?@?@@@?@@@@@?@@@@??@@?@@@?@??@@?@?@??A@?HPBBFF?JBPFb@Jv@Jr@?V@P@d@?l@A~@?^?DCbAAj@Bf@BXF\\DT@LVrA@Bp@xDZpBrAbIXbBF`@BNTlALj@JT@BFJ@BBDJJLHb@VXJ@@ZRLFFJDJFPA@?@?@?@?@?@@@?@?@?@@@ITCRa@|@GLMXCJK\\GRSl@Sv@CHCHADAFA?A?A@GJKNEDEFMJKFIFQHA??AA?A?A?A?A??@A??@A??@A?EUIM[_ACIGSGQK_@G]Oq@Ks@Mq@K[M}@M}@_@gBIg@CWCSEMGW]uBSeAGk@M_Aj@S"
+                            },
+                            "start_location":{
+                                "lat":47.388741,
+                                "lng":8.073905
+                            },
+                            "transit_details":{
+                                "arrival_stop":{
+                                    "location":{
+                                        "lat":47.391834,
+                                        "lng":8.051041
+                                    },
+                                    "name":"Aarau, Bahnhof"
+                                },
+                                "arrival_time":{
+                                    "text":"1: 18\u202fPM",
+                                    "time_zone":"Europe/Zurich",
+                                    "value":1731154680
+                                },
+                                "departure_stop":{
+                                    "location":{
+                                        "lat":47.388741,
+                                        "lng":8.073905
+                                    },
+                                    "name":"Buchs AG, Gysistrasse"
+                                },
+                                "departure_time":{
+                                    "text":"1: 10\u202fPM",
+                                    "time_zone":"Europe/Zurich",
+                                    "value":1731154200
+                                },
+                                "headsign":"Küttigen, Kreuz",
+                                "line":{
+                                    "agencies":[
+                                        {
+                                            "name":"Busbetrieb Aarau",
+                                            "phone":"011 41 848 446 688",
+                                            "url":"http: //www.sbb.ch/"
+                                        }
+                                    ],
+                                    "color":"#ec0000",
+                                    "short_name":"1",
+                                    "text_color":"#ffffff",
+                                    "vehicle":{
+                                        "icon":"//maps.gstatic.com/mapfiles/transit/iw2/6/bus2.png",
+                                        "name":"Bus",
+                                        "type":"BUS"
+                                    }
+                                },
+                                "num_stops":5
+                            },
+                            "travel_mode":"TRANSIT"
+                        },
+                        {
+                            "distance":{
+                                "text":"0.2 km",
+                                "value":224
+                            },
+                            "duration":{
+                                "text":"3 mins",
+                                "value":186
+                            },
+                            "end_location":{
+                                "lat":47.39272649999999,
+                                "lng":8.053448
+                            },
+                            "html_instructions":"Walk to Bahnhofstrasse 94, 5000 Aarau, Switzerland",
+                            "polyline":{
+                                "points":"gfg`Hymcp@Mg@AI[PAMEUEQKc@a@aBEUg@{CK{@G]"
+                            },
+                            "start_location":{
+                                "lat":47.3918832,
+                                "lng":8.051008099999999
+                            },
+                            "steps":[
+                                {
+                                    "distance":{
+                                        "text":"21 m",
+                                        "value":21
+                                    },
+                                    "duration":{
+                                        "text":"1 min",
+                                        "value":17
+                                    },
+                                    "end_location":{
+                                        "lat":47.3919572,
+                                        "lng":8.0512641
+                                    },
+                                    "html_instructions":"Head <b>northeast</b> on <b>Bahnhofpl.</b>",
+                                    "polyline":{
+                                        "points":"gfg`Hymcp@Mg@AI"
+                                    },
+                                    "start_location":{
+                                        "lat":47.3918832,
+                                        "lng":8.051008099999999
+                                    },
+                                    "travel_mode":"WALKING"
+                                },
+                                {
+                                    "distance":{
+                                        "text":"17 m",
+                                        "value":17
+                                    },
+                                    "duration":{
+                                        "text":"1 min",
+                                        "value":15
+                                    },
+                                    "end_location":{
+                                        "lat":47.3920985,
+                                        "lng":8.051166799999999
+                                    },
+                                    "html_instructions":"Turn <b>left</b> to stay on <b>Bahnhofpl.</b>",
+                                    "maneuver":"turn-left",
+                                    "polyline":{
+                                        "points":"wfg`Hkocp@[P"
+                                    },
+                                    "start_location":{
+                                        "lat":47.3919572,
+                                        "lng":8.0512641
+                                    },
+                                    "travel_mode":"WALKING"
+                                },
+                                {
+                                    "distance":{
+                                        "text":"0.2 km",
+                                        "value":186
+                                    },
+                                    "duration":{
+                                        "text":"3 mins",
+                                        "value":154
+                                    },
+                                    "end_location":{
+                                        "lat":47.39272649999999,
+                                        "lng":8.053448
+                                    },
+                                    "html_instructions":"Turn <b>right</b> onto <b>Bahnhofstrasse</b><div style=\"font-size:0.9em\">Destination will be on the right</div>",
+                                    "maneuver":"turn-right",
+                                    "polyline":{
+                                        "points":"sgg`Hyncp@AMEUEQKc@a@aBEUg@{CK{@G]"
+                                    },
+                                    "start_location":{
+                                        "lat":47.3920985,
+                                        "lng":8.051166799999999
+                                    },
+                                    "travel_mode":"WALKING"
+                                }
+                            ],
+                            "travel_mode":"WALKING"
+                        }
+                    ],
+                    "traffic_speed_entry":[
+                        
+                    ],
+                    "via_waypoint":[
+                        
+                    ]
+                }
+            ],
+            "overview_polyline":{
+                "points":"skf`Hyzgp@EyBAo@]QQBcBp@{@`@I^I^YzCOr@Sl@w@lBuAxD_@jBKdBCp@Gl@EBGLE\\BPFJHF@jB?|AAtJAnH?hDEt@i@rC{BbN}AfJWzAKj@IVMJU^AACAQ@GJCN?NDNHHH@@ALTFF?JJt@VjBB|BEhD@rAJv@`@zBzDrUJp@b@xBVh@NPp@`@ZLh@ZTh@AD@F?D@@Mh@{@pB{@vCK`@E@_@h@u@d@CAG@C@A@EUIM[_AK]Sq@WoAYeBK[M}@m@eDWaBe@mC[qBM_Aj@SIDMg@AI[PGc@y@mD{@uF"
+            },
+            "summary":"",
+            "warnings":[
+                "Walking directions are in beta. Use caution – This route may be missing sidewalks or pedestrian paths."
+            ],
+            "waypoint_order":[
+                
+            ]
+        }
+    ],
+    "status":"OK"
+}

@@ -5,6 +5,7 @@ from fastapi import HTTPException
 from .models import DistanceRequest, DistanceResponse, TransitDetails, ModeDistance, TransitInfo, CrawlRequest, CrawlResponse, ApartmentDetails, ApartmentSearchResponse, PksRequest
 from dotenv import load_dotenv
 from bs4 import BeautifulSoup
+from typing import Optional
 import re
 
 import json
@@ -233,8 +234,6 @@ def crawl_url(crawl_request: CrawlRequest) -> CrawlResponse:
         response.raise_for_status()
         json_response = response.json()
         
-
-        
         return json_response
 
     except requests.exceptions.RequestException as e:
@@ -373,3 +372,46 @@ def extract_pks_from_html(html_content: str) -> List[int]:
     
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Error parsing HTML for pks: {str(e)}")
+
+
+
+
+
+# Define the function to get the address from Homegate, now accepting a CrawlRequest
+def get_homegate_address(crawl_request: CrawlRequest) -> Optional[str]:
+    print(f"Fetching address from {crawl_request.urls[0]}")
+    try:
+        # Pass the entire CrawlRequest to crawl_url for processing
+        homegate = crawl_url(crawl_request)
+        # cleaned_html = homegate['results'][0]['cleaned_html']
+        address = extract_address(homegate['results'][0])
+        return address
+    except Exception as e:
+        print(f"Failed to fetch address from {crawl_request.urls[0]}: {e}")
+        return None
+    
+
+def extract_address(data):
+    # Try extracting from title or description in metadata
+    title = data.get('metadata', {}).get('title', '')
+    description = data.get('metadata', {}).get('description', '')
+
+    print(f"Extracting address from {title} and {description}")
+    
+    # Regex to find addresses in formats with street names and numbers
+    address_pattern = r'\b[A-Za-zäöüßÄÖÜ]+(?:\s+[A-Za-zäöüßÄÖÜ]+)*\s+\d{1,3}\b'
+    
+    # Search title and description for addresses
+    address_match = re.search(address_pattern, title) or re.search(address_pattern, description)
+    if address_match:
+        return address_match.group(0)
+    
+    # If address not found in metadata, search in content list
+    for item in data.get('content', []):
+        content = item.get('content', '')
+        address_match = re.search(address_pattern, content)
+        if address_match:
+            return address_match.group(0)
+    
+    # Return None if no address found
+    return None
