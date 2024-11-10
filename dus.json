@@ -1,0 +1,319 @@
+{
+    "geocoded_waypoints":[
+        {
+            "geocoder_status":"OK",
+            "place_id":"ChIJaaRFRYnJuEcRoJ0YeyzKlNg",
+            "types":[
+                "premise"
+            ]
+        },
+        {
+            "geocoder_status":"OK",
+            "place_id":"ChIJAc-kacvLuEcRz4UUSEr_A8M",
+            "types":[
+                "street_address"
+            ]
+        }
+    ],
+    "routes":[
+        {
+            "bounds":{
+                "northeast":{
+                    "lat":51.2389831,
+                    "lng":6.8115311
+                },
+                "southwest":{
+                    "lat":51.21632469999999,
+                    "lng":6.7878095
+                }
+            },
+            "copyrights":"Map data ©2024 GeoBasis-DE/BKG (©2009)",
+            "legs":[
+                {
+                    "arrival_time":{
+                        "text":"8:54\u202fPM",
+                        "time_zone":"Europe/Berlin",
+                        "value":1731268481
+                    },
+                    "departure_time":{
+                        "text":"8:32\u202fPM",
+                        "time_zone":"Europe/Berlin",
+                        "value":1731267141
+                    },
+                    "distance":{
+                        "text":"4.4 km",
+                        "value":4371
+                    },
+                    "duration":{
+                        "text":"22 mins",
+                        "value":1340
+                    },
+                    "end_address":"Kölner Str. 186-188, 40227 Düsseldorf, Germany",
+                    "end_location":{
+                        "lat":51.2172529,
+                        "lng":6.803442700000001
+                    },
+                    "start_address":"Moltkestraße 55, 40477 Düsseldorf, Germany",
+                    "start_location":{
+                        "lat":51.2389831,
+                        "lng":6.7878095
+                    },
+                    "steps":[
+                        {
+                            "distance":{
+                                "text":"0.3 km",
+                                "value":307
+                            },
+                            "duration":{
+                                "text":"4 mins",
+                                "value":248
+                            },
+                            "end_location":{
+                                "lat":51.23690879999999,
+                                "lng":6.7892959
+                            },
+                            "html_instructions":"Walk to D-Stockkampstraße",
+                            "polyline":{
+                                "points":"srvwHyvlh@zAyCHEDG^s@JOn@_Ad@UNIFAJANCfBMRA?x@"
+                            },
+                            "start_location":{
+                                "lat":51.2389831,
+                                "lng":6.7878095
+                            },
+                            "steps":[
+                                {
+                                    "distance":{
+                                        "text":"0.2 km",
+                                        "value":154
+                                    },
+                                    "duration":{
+                                        "text":"2 mins",
+                                        "value":128
+                                    },
+                                    "end_location":{
+                                        "lat":51.2379833,
+                                        "lng":6.7893119
+                                    },
+                                    "html_instructions":"Head <b>southeast</b> on <b>Moltkestraße</b> toward <b>Annastraße</b>",
+                                    "polyline":{
+                                        "points":"srvwHyvlh@zAyCHEDG^s@JOn@_A"
+                                    },
+                                    "start_location":{
+                                        "lat":51.2389831,
+                                        "lng":6.7878095
+                                    },
+                                    "travel_mode":"WALKING"
+                                },
+                                {
+                                    "distance":{
+                                        "text":"0.1 km",
+                                        "value":128
+                                    },
+                                    "duration":{
+                                        "text":"2 mins",
+                                        "value":101
+                                    },
+                                    "end_location":{
+                                        "lat":51.2369122,
+                                        "lng":6.78959
+                                    },
+                                    "html_instructions":"Slight <b>right</b> onto <b>Derendorfer Str.</b>",
+                                    "maneuver":"turn-slight-right",
+                                    "polyline":{
+                                        "points":"klvwHe`mh@d@UNIFAJANCfBMRA"
+                                    },
+                                    "start_location":{
+                                        "lat":51.2379833,
+                                        "lng":6.7893119
+                                    },
+                                    "travel_mode":"WALKING"
+                                },
+                                {
+                                    "distance":{
+                                        "text":"25 m",
+                                        "value":25
+                                    },
+                                    "duration":{
+                                        "text":"1 min",
+                                        "value":19
+                                    },
+                                    "end_location":{
+                                        "lat":51.23690879999999,
+                                        "lng":6.7892959
+                                    },
+                                    "html_instructions":"Turn <b>right</b> onto <b>Stockkampstraße</b><div style=\"font-size:0.9em\">Destination will be on the right</div>",
+                                    "maneuver":"turn-right",
+                                    "polyline":{
+                                        "points":"uevwH}amh@?x@"
+                                    },
+                                    "start_location":{
+                                        "lat":51.2369122,
+                                        "lng":6.78959
+                                    },
+                                    "travel_mode":"WALKING"
+                                }
+                            ],
+                            "travel_mode":"WALKING"
+                        },
+                        {
+                            "distance":{
+                                "text":"3.9 km",
+                                "value":3930
+                            },
+                            "duration":{
+                                "text":"16 mins",
+                                "value":960
+                            },
+                            "end_location":{
+                                "lat":51.21635000000001,
+                                "lng":6.80386
+                            },
+                            "html_instructions":"Tram towards D-Am Steinberg",
+                            "polyline":{
+                                "points":"sevwHc`mh@@??eAAKa@cIBeALm@DOz@wCh@gB@CVw@RmAJMCa@FSCgAC{AAOI{CGoBA_@A_@AQAO?CAO?IA[Eu@?ACq@?QN[@AtBaG^u@wAqCmK_Ku@_CBCr@_AlAcBnBmCDE\\uAjEmE`AqALQj@s@^[ZUxAgAhAy@fAq@CBzCmBfB}@VQDEFCDAF?HAB?J@NBLA@?`@@D?F?DAFCrDwBlDeB~@c@`Ae@HE~C}AbEoBXKHCRCJ?V?`@@xAFX@~CNN@RBTBXDlATp@Lr@JrB^RDRFPFVJd@VRJl@\\tA~@j@d@l@d@pAxA|@bA@TJ?@DFFHLBB@@@@@@Z\\LNFF@@@@@@@@@@@?Z\\JJLJJLLLPNLLDF@??@@?HHLLNJNLPN@?FHFDHF@@FFHFJFHFFDFDBBDBHFNJLHHDPPBBZ`@h@t@HLZb@\\f@Xf@HLFF`A~@TRLPPPPVPVRVPV@D\\f@`@t@EF"
+                            },
+                            "start_location":{
+                                "lat":51.2369,
+                                "lng":6.7893
+                            },
+                            "transit_details":{
+                                "arrival_stop":{
+                                    "location":{
+                                        "lat":51.21635000000001,
+                                        "lng":6.80386
+                                    },
+                                    "name":"D-Oberbilker Markt U"
+                                },
+                                "arrival_time":{
+                                    "text":"8:52\u202fPM",
+                                    "time_zone":"Europe/Berlin",
+                                    "value":1731268350
+                                },
+                                "departure_stop":{
+                                    "location":{
+                                        "lat":51.2369,
+                                        "lng":6.7893
+                                    },
+                                    "name":"D-Stockkampstraße"
+                                },
+                                "departure_time":{
+                                    "text":"8:36\u202fPM",
+                                    "time_zone":"Europe/Berlin",
+                                    "value":1731267390
+                                },
+                                "headsign":"D-Am Steinberg",
+                                "line":{
+                                    "agencies":[
+                                        {
+                                            "name":"Rheinbahn Strab",
+                                            "url":"https://www.delfi.de/"
+                                        }
+                                    ],
+                                    "color":"#e30613",
+                                    "name":"706",
+                                    "text_color":"#ffffff",
+                                    "vehicle":{
+                                        "icon":"//maps.gstatic.com/mapfiles/transit/iw2/6/tram2.png",
+                                        "name":"Tram",
+                                        "type":"TRAM"
+                                    }
+                                },
+                                "num_stops":12
+                            },
+                            "travel_mode":"TRANSIT"
+                        },
+                        {
+                            "distance":{
+                                "text":"0.1 km",
+                                "value":134
+                            },
+                            "duration":{
+                                "text":"2 mins",
+                                "value":109
+                            },
+                            "end_location":{
+                                "lat":51.2172529,
+                                "lng":6.803442700000001
+                            },
+                            "html_instructions":"Walk to Kölner Str. 186-188, 40227 Düsseldorf, Germany",
+                            "polyline":{
+                                "points":"werwHkzoh@Rd@GDwCLU@"
+                            },
+                            "start_location":{
+                                "lat":51.2164388,
+                                "lng":6.8037409
+                            },
+                            "steps":[
+                                {
+                                    "distance":{
+                                        "text":"24 m",
+                                        "value":24
+                                    },
+                                    "duration":{
+                                        "text":"1 min",
+                                        "value":19
+                                    },
+                                    "end_location":{
+                                        "lat":51.2163378,
+                                        "lng":6.803548999999999
+                                    },
+                                    "html_instructions":"Head <b>southwest</b> on <b>Kruppstraße</b>/<wbr/><b>Werdener Str.</b>/<wbr/><b>B8</b> toward <b>Kölner Str.</b>",
+                                    "polyline":{
+                                        "points":"werwHkzoh@Rd@"
+                                    },
+                                    "start_location":{
+                                        "lat":51.2164388,
+                                        "lng":6.8037409
+                                    },
+                                    "travel_mode":"WALKING"
+                                },
+                                {
+                                    "distance":{
+                                        "text":"0.1 km",
+                                        "value":110
+                                    },
+                                    "duration":{
+                                        "text":"2 mins",
+                                        "value":90
+                                    },
+                                    "end_location":{
+                                        "lat":51.2172529,
+                                        "lng":6.803442700000001
+                                    },
+                                    "html_instructions":"Turn <b>right</b><div style=\"font-size:0.9em\">Destination will be on the left</div>",
+                                    "maneuver":"turn-right",
+                                    "polyline":{
+                                        "points":"cerwHeyoh@GDwCLU@"
+                                    },
+                                    "start_location":{
+                                        "lat":51.2163378,
+                                        "lng":6.803548999999999
+                                    },
+                                    "travel_mode":"WALKING"
+                                }
+                            ],
+                            "travel_mode":"WALKING"
+                        }
+                    ],
+                    "traffic_speed_entry":[
+                        
+                    ],
+                    "via_waypoint":[
+                        
+                    ]
+                }
+            ],
+            "overview_polyline":{
+                "points":"srvwHyvlh@zAyCHEd@{@z@oAt@_@jCURA?x@B?AqAa@cIBeALm@`AgDj@kBVw@RmAJMCa@FSCgAEkBQkGGaBMuDP]tBaG^u@wAqCmK_Ku@_CBC`CcDtBsC\\uAjEmEnAcBj@s@^[tB}ApCkBCBzCmB~BoALIZCZDNAt@?zD{BlDeBjHmD|E{B\\G~CH|EVnDl@fDj@f@Lh@Rx@b@bC|AxAjAnC|C@TJ?HLLP`@b@`@`@tBvBlAbAz@p@jAx@ZV^d@lBnCb@t@hAfAfAnAx@lA~@|AW^Rd@GDmDN"
+            },
+            "summary":"",
+            "warnings":[
+                "Walking directions are in beta. Use caution – This route may be missing sidewalks or pedestrian paths."
+            ],
+            "waypoint_order":[
+                
+            ]
+        }
+    ],
+    "status":"OK"
+}

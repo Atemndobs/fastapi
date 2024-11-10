@@ -2,7 +2,7 @@
 
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from . import quiz, apartment, crawler, crawler_bak, get_distance, add_to_list
+from . import quiz, apartment, crawler, crawler_bak, get_distance, add_to_list,get_addresses
 
 app = FastAPI()
 
@@ -34,6 +34,7 @@ app.include_router(crawler.router, prefix="/api/v1/apartment", tags=["crawler"])
 app.include_router(get_distance.router, prefix="/api/v1/apartment", tags=["get_distance"]) 
 app.include_router(add_to_list.router, prefix="/api/v1/apartment", tags=["add_to_list"]) 
 app.include_router(crawler.router, prefix="/api/v1/apartment", tags=["search_apartments"]) 
+app.include_router(get_addresses.router, prefix="/api/v1/apartment", tags=["get_addresses"]) 
 
 @app.get("/health")
 def health_check():

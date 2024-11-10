@@ -5,7 +5,7 @@ from fastapi import HTTPException
 from .models import DistanceRequest, DistanceResponse, TransitDetails, ModeDistance, TransitInfo, CrawlRequest, CrawlResponse, ApartmentDetails, ApartmentSearchResponse, PksRequest
 from dotenv import load_dotenv
 from bs4 import BeautifulSoup
-from typing import Optional
+from typing import Optional, List
 import re
 
 import json
@@ -65,12 +65,12 @@ def get_transit_info(origin: str, destination: str) -> TransitInfo:
                     if 'transit_details' in step:
                         transit_info = step['transit_details']
                         transit_detail = TransitDetails(
-                            line_nr=transit_info['line']['short_name'],  # or transit_info['line']['text']
-                            line_name=transit_info['line']['vehicle']['name'],
-                            line_icon=transit_info['line']['vehicle']['icon'],
-                            line_color=transit_info['line'].get('color'),
-                            vehicle_type=transit_info['line']['vehicle']['name'],
-                            num_stops=transit_info['num_stops']
+                            line_nr=transit_info['line'].get('short_name', transit_info['line'].get('name', 'N/A')),
+                            line_name=transit_info['line']['vehicle'].get('name', 'Unknown Vehicle'),
+                            line_icon=transit_info['line']['vehicle'].get('icon', ''),
+                            line_color=transit_info['line'].get('color', '#000000'),
+                            vehicle_type=transit_info['line']['vehicle'].get('name', 'Unknown Vehicle'),
+                            num_stops=transit_info.get('num_stops', 0)
                         )
                         transit_details_list.append(transit_detail)
                         print(f"{transit_details_list}")
@@ -415,3 +415,44 @@ def extract_address(data):
     
     # Return None if no address found
     return None
+
+
+
+# Define the function to get the addresses from Homegate, now returning a list of addresses
+def get_addresses(crawl_request: CrawlRequest) -> List[str]:
+    print(f"Fetching addresses from {crawl_request.urls[0]}")
+    try:
+        # Pass the entire CrawlRequest to crawl_url for processing
+        scraped_data = crawl_url(crawl_request)
+
+        # Assuming scraped_data contains HTML data as a string, pass it to extract_addresses
+        addresses = extract_addresses(scraped_data['results'][0]['cleaned_html'])
+
+        print(f"Found addresses: {addresses}")
+        return addresses
+    except Exception as e:
+        print(f"Failed to fetch addresses from {crawl_request.urls[0]}: {e}")
+        return []
+
+
+# Function to extract addresses from the scraped HTML data
+def extract_addresses(scraped_data: str) -> List[str]:
+    addresses = []
+
+    # Parse the HTML content using BeautifulSoup
+    soup = BeautifulSoup(scraped_data, 'html.parser')
+    
+    # Find all text elements (you can refine this based on your page's structure)
+    text_elements = soup.find_all(text=True)
+
+    # Regex pattern for a typical address format: street, postal code, city
+    address_pattern = re.compile(r'\d{1,5}[a-zA-ZöäüÖÄÜß]?\s[a-zA-ZäöüÄÖÜß\s]+,\s\d{4,5}\s[a-zA-ZäöüÄÖÜß]+')
+
+    # Iterate through the found text elements
+    for element in text_elements:
+        # Check if the text matches the address pattern
+        address = element.strip()
+        if address and address_pattern.search(address):
+            addresses.append(address)
+    
+    return addresses
