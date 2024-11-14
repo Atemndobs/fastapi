@@ -6,6 +6,7 @@ from .models import DistanceRequest, DistanceResponse, TransitDetails, ModeDista
 from dotenv import load_dotenv
 from bs4 import BeautifulSoup
 from typing import Optional, List
+from urllib.parse import urlencode
 import re
 
 import json
@@ -78,19 +79,55 @@ def get_transit_info(origin: str, destination: str) -> TransitInfo:
     return TransitInfo(distance=distance, duration=duration, transit_details=transit_details_list)
 
 
+# def get_distance_data(distance_request: DistanceRequest) -> DistanceResponse:
+#     try:
+#         origin = distance_request.address
+#         destination = distance_request.target_address
+#         # Request distance info for each travel mode
+#         driving_info = get_distance_info(origin, destination, "driving")
+#         walking_info = get_distance_info(origin, destination, "walking")
+#         bicycling_info = get_distance_info(origin, destination, "bicycling")
+#         transit_info = get_transit_info(origin, destination)
+
+#         # Log transit_info for debugging
+#         print("Transit Info:", transit_info)
+
+#         return DistanceResponse(
+#             driving=driving_info,
+#             walking=walking_info,
+#             bicycling=bicycling_info,
+#             transit=transit_info,
+#         )
+
+#     except requests.exceptions.RequestException as e:
+#         raise HTTPException(status_code=500, detail=f"Request to Google Maps API failed: {str(e)}")
+#     except Exception as e:
+#         raise HTTPException(status_code=500, detail=f"An error occurred: {str(e)}")
+
+
+
+def generate_maps_link(origin: str, destination: str, mode: str) -> str:
+    return f"https://www.google.com/maps/dir/?api=1&origin={origin}&destination={destination}&travelmode={mode}"
+
 def get_distance_data(distance_request: DistanceRequest) -> DistanceResponse:
     try:
         origin = distance_request.address
         destination = distance_request.target_address
-        # Request distance info for each travel mode
+        
+        # Request distance info for each travel mode and add map links
         driving_info = get_distance_info(origin, destination, "driving")
+        driving_info.map_link = generate_maps_link(origin, destination, "driving")
+        
         walking_info = get_distance_info(origin, destination, "walking")
+        walking_info.map_link = generate_maps_link(origin, destination, "walking")
+        
         bicycling_info = get_distance_info(origin, destination, "bicycling")
+        bicycling_info.map_link = generate_maps_link(origin, destination, "bicycling")
+        
         transit_info = get_transit_info(origin, destination)
-
-        # Log transit_info for debugging
-        print("Transit Info:", transit_info)
-
+        transit_info.map_link = generate_maps_link(origin, destination, "transit")
+        
+        # Compile all info into the response
         return DistanceResponse(
             driving=driving_info,
             walking=walking_info,
@@ -102,6 +139,8 @@ def get_distance_data(distance_request: DistanceRequest) -> DistanceResponse:
         raise HTTPException(status_code=500, detail=f"Request to Google Maps API failed: {str(e)}")
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"An error occurred: {str(e)}")
+
+
 
 # Function to extract apartment details from HTML
 def extract_apartment_details(html_content: str) -> ApartmentDetails:
@@ -192,6 +231,16 @@ def extract_apartment_details(html_content: str) -> ApartmentDetails:
             break  # Exit loop once we find and process the description
 
     return details
+
+# def get_google_maps_link(origin, destination, travel_mode="driving"):
+#     params = {
+#         "api": "1",
+#         "origin": origin,
+#         "destination": destination,
+#         "travelmode": travel_mode
+#     }
+#     base_url = "https://www.google.com/maps/dir/?"
+#     return base_url + urlencode(params)
 
 
 def crawl_apartment_data(crawl_request: CrawlRequest) -> CrawlResponse:

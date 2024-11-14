@@ -65,6 +65,7 @@ class DistanceRequest(BaseModel):
 class ModeDistance(BaseModel):
     distance: Optional[float] = None  # Distance in kilometers
     duration: Optional[float] = None  # Duration in minutes
+    map_link: Optional[str] = None  # Link to Google Maps route
 
 class TransitDetails(BaseModel):
     line_nr: str
@@ -82,6 +83,7 @@ class DistanceResponse(BaseModel):
     walking: ModeDistance
     bicycling: ModeDistance
     transit: TransitInfo
+
 
 
     # Define AddToListRequest model
