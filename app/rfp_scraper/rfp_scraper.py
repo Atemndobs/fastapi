@@ -124,7 +124,7 @@ class RFPCategory(str, Enum):
         url = url.lower()
         
         # Check for mobile-related patterns first
-        if any(term in url for term in ['/mobile-app', 'mobile-apps', 'mobileapp', 'ios-app', 'android-app', 'flutter-app']):
+        if any(term in url for term in ['/mobile-app', 'mobile-apps', 'mobileapp', 'mobile-application', 'ios-app', 'android-app', 'flutter-app']):
             return cls.MOBILE_APPS
             
         if any(term in url for term in ['mobile-design', 'mobile-ui', 'mobile-ux']):
@@ -921,10 +921,29 @@ async def _fetch_rfps_impl(url: str = None) -> Dict[str, Any]:
                         return item_data
                     # Create a new dict without the 'offers' field
                     return {k: v for k, v in item_data.items() if k != 'offers'}
-                
-                # Return the cleaned items from @itemListElement
-                items = [clean_item(item.get("item", {})) for item in json_data["@itemListElement"]]
-                
+
+                # Determine the target category from the URL
+                target_category = RFPCategory.from_url(target_url)
+                logger.info(f"Target category from URL: {target_category.value}")
+
+                # Get all items from @itemListElement
+                all_items = [clean_item(item.get("item", {})) for item in json_data["@itemListElement"]]
+
+                # Filter items based on the target category
+                # Only filter if not using web-design (default) category, to maintain backward compatibility
+                if target_category != RFPCategory.WEB_DESIGN:
+                    filtered_items = []
+                    for item in all_items:
+                        item_url = item.get('url', '')
+                        item_category = RFPCategory.from_url(item_url)
+                        # Include item if its category matches the target category
+                        if item_category == target_category:
+                            filtered_items.append(item)
+                    items = filtered_items
+                    logger.info(f"Filtered to {len(items)} items matching category {target_category.value}")
+                else:
+                    items = all_items
+
                 result = {
                     "success": True,
                     "count": len(items),
